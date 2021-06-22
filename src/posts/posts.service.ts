@@ -26,7 +26,8 @@ export class PostsService {
   }
 
   async updatePost(id: number, post: UpdatePostDto) {
-    const updatedPost = this.postRepository.update(id, post);
+    await this.postRepository.update(id, post);
+    const updatedPost = await this.postRepository.findOne(id);
     if (updatedPost) {
       return updatedPost;
     }
