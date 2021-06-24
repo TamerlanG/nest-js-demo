@@ -50,7 +50,7 @@
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
     "@nestjs/schematics": "^7.3.0",
-    "@nestjs/testing": "^7.6.15",
+    "@nestjs/testing": "^7.6.18",
     "@types/express": "^4.17.12",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.36",
@@ -83,6 +83,9 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/$1"
+    },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
