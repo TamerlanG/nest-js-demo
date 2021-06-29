@@ -23,7 +23,9 @@ class Post {
   @Column({ nullable: true })
   public category?: string;
 
-  @ManyToOne(() => User, (author: User) => author.posts)
+  @ManyToOne(() => User, (author: User) => author.posts, {
+    onDelete: 'CASCADE',
+  })
   public author: User;
 
   @ManyToMany(() => Category, (category: Category) => category.posts)
